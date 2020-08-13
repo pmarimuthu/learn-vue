@@ -8,20 +8,43 @@ Vue.component("click-counter", {
   },
 });
 
-Vue.component("plan", {
+let PlanComponent = {
   template: "#plan-template",
   props: {
     name: {
       type: String,
       default: "pmarimuthu",
-      required: true,
     },
   },
-});
+  data() {
+    return {
+      selected: false,
+    };
+  },
+  methods: {
+    onSelect() {
+      this.$emit('onSelect', this.name);
+      this.selected = !this.selected;
+    },
+  },
+};
+
+let PlanPickerComponent = {
+  template: "#plan-picker-template",
+  components: {
+    plan: PlanComponent,
+  },
+  data() {
+    return {
+      plans: ["Student", "Professional", "Expert"],
+    };
+  },
+};
 
 new Vue({
   el: "#app",
-  data: {
-    plans: ["Student", "Professional", "Expert"],
+  components: {
+    planpicker: PlanPickerComponent,
   },
+  data: {},
 });

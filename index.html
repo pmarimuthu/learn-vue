@@ -20,21 +20,23 @@
       </div>
 
       <div>
-        <plan v-for="plan in plans" :name="plan">
+        <planpicker></planpicker>
       </div>
-
-      <div></div>
     </div>
 
     <script type="text/x-template" id="click-counter-template">
       <div>
-          &nbsp; <button @click="count++"> {{ count }} </button>
+          <button @click="count++"> {{ count }} </button>
       </div>
     </script>
 
     <script type="text/x-template" id="plan-template">
+      <div @click="onSelect"> {{ name }} </div>
+    </script>
+
+    <script type="text/x-template" id="plan-picker-template">
       <div>
-          {{ name }}
+          <plan v-for="(plan, index) in plans" :name="plan" :key="index" @onSelect="selectedPlan"></plan>
       </div>
     </script>
 
