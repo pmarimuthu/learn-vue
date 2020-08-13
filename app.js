@@ -1,5 +1,5 @@
 Vue.component("click-counter", {
-  template: '<button @click="count++"> {{ count }} </button>',
+  template: "#click-counter-template",
 
   data() {
     return {
@@ -8,6 +8,20 @@ Vue.component("click-counter", {
   },
 });
 
+Vue.component("plan", {
+  template: "#plan-template",
+  props: {
+    name: {
+      type: String,
+      default: "pmarimuthu",
+      required: true,
+    },
+  },
+});
+
 new Vue({
   el: "#app",
+  data: {
+    plans: ["Student", "Professional", "Expert"],
+  },
 });
