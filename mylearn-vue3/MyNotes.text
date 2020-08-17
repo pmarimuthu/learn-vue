@@ -1,7 +1,14 @@
+Steps that i followed ...
+---------------------------
+
+Reference: https://v3.vuejs.org/guide/
+
+---------------------------
 $ npm init vite-app mylearn-vue3
 $ cd mylearn-vue3
 $ npm install
 $ npm run dev
-
 -----------------------------
+
+
 
