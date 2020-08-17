@@ -1,0 +1,7 @@
+$ npm init vite-app mylearn-vue3
+$ cd mylearn-vue3
+$ npm install
+$ npm run dev
+
+-----------------------------
+
